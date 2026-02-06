@@ -1,0 +1,1 @@
+import{b as a,C as c,c as l,d as t,az as f,m as d}from"./entry-client-067069b4.js";const p=r=>{let e=null;const s=a(!1),i=c(()=>e);return l(()=>{i()&&s(!0)}),t(r.children,{ref(n){const o=e;typeof o=="function"?o(n):e=n},get isTriggered(){return s()}})},m=r=>t(p,{children:e=>t(f,d(r,e))});export{p as O,m as a};

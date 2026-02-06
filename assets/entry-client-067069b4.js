@@ -24420,7 +24420,7 @@ Cv.exports.MailService = PQ;
 var NQ = Cv.exports;
 const Hm = pp(NQ);
 async function DQ({ request: n }) {
-  const e = "YOUR_SENDGRID_API_KEY",
+  const e = "SG.REMOVED_FOR_SECURITY",
     t = await new Response(n.body).json(),
     i = [
       "type",
@@ -24526,7 +24526,7 @@ Website: ${t.website || "N/A"}`,
 }
 async function GQ({ request: n }) {
   try {
-    const e = "YOUR_SENDGRID_API_KEY";
+    const e = "SG.REMOVED_FOR_SECURITY";
     Hm.setApiKey(e);
     const t = await n.json();
     if (!t)
