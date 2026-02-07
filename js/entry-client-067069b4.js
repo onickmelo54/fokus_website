@@ -89226,8 +89226,50 @@ const fb = Dn(!1),
                       width: "100%",
                       objectFit: "cover",
                       "@media (max-width: 767px)": { position: "static" },
+                      transition: "all 0.3s ease",
                     },
                     as: "video",
+                    onError: (e) => {
+                      console.error("Video playback error:", e);
+                    },
+                    onClick: (evt) => {
+                      const v = evt.target;
+                      if (window.innerWidth < 768) {
+                        evt.preventDefault();
+                        if (v.requestFullscreen) {
+                          v.requestFullscreen();
+                        } else if (v.webkitEnterFullscreen) {
+                          v.webkitEnterFullscreen();
+                        } else if (v.webkitRequestFullscreen) {
+                          v.webkitRequestFullscreen();
+                        }
+                        v.muted = !1;
+                        v.controls = !0;
+                        h(!1);
+                        const exitHandler = () => {
+                          if (
+                            !document.fullscreenElement &&
+                            !document.webkitIsFullScreen &&
+                            !document.mozFullScreen &&
+                            !document.msFullscreenElement
+                          ) {
+                            v.muted = !0;
+                            v.controls = !1;
+                            h(!0);
+                            v.removeEventListener(
+                              "fullscreenchange",
+                              exitHandler,
+                            );
+                            v.removeEventListener(
+                              "webkitendfullscreen",
+                              exitHandler,
+                            );
+                          }
+                        };
+                        v.addEventListener("fullscreenchange", exitHandler);
+                        v.addEventListener("webkitendfullscreen", exitHandler);
+                      }
+                    },
                   }),
                   G($.Generic, {
                     css: {
