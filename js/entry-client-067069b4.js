@@ -89232,20 +89232,42 @@ const fb = Dn(!1),
                     onError: (e) => {
                       console.error("Video playback error:", e);
                     },
+                  }),
+                  G($.Generic, {
+                    as: "div",
+                    css: {
+                      position: "absolute",
+                      inset: "0px",
+                      zIndex: "5",
+                      cursor: "pointer",
+                      "@media (min-width: 768px)": { display: "none" },
+                    },
                     onClick: (evt) => {
-                      const v = evt.target;
+                      const v = c;
+                      console.log(
+                        "Overlay clicked. Mobile check:",
+                        window.innerWidth < 768,
+                      );
                       if (window.innerWidth < 768) {
                         evt.preventDefault();
-                        if (v.requestFullscreen) {
-                          v.requestFullscreen();
-                        } else if (v.webkitEnterFullscreen) {
-                          v.webkitEnterFullscreen();
-                        } else if (v.webkitRequestFullscreen) {
-                          v.webkitRequestFullscreen();
+                        if (!v) {
+                          console.error(
+                            "Video element reference 'c' is missing!",
+                          );
+                          return;
                         }
-                        v.muted = !1;
-                        v.controls = !0;
-                        h(!1);
+
+                        console.log("Video element found:", v);
+                        v.style.opacity = "0.7";
+                        setTimeout(() => (v.style.opacity = "1"), 500);
+
+                        const activate = () => {
+                          console.log("Activating controls and unmuting");
+                          v.muted = !1;
+                          v.controls = !0;
+                          h(!1);
+                        };
+
                         const exitHandler = () => {
                           if (
                             !document.fullscreenElement &&
@@ -89253,6 +89275,7 @@ const fb = Dn(!1),
                             !document.mozFullScreen &&
                             !document.msFullscreenElement
                           ) {
+                            console.log("Exiting fullscreen");
                             v.muted = !0;
                             v.controls = !1;
                             h(!0);
@@ -89266,6 +89289,34 @@ const fb = Dn(!1),
                             );
                           }
                         };
+
+                        if (v.requestFullscreen) {
+                          console.log("Attempting requestFullscreen");
+                          v.requestFullscreen()
+                            .then(activate)
+                            .catch((e) => {
+                              console.error("Fullscreen failed:", e);
+                              v.style.opacity = "1";
+                              // Fallback: just play unmuted if fullscreen fails
+                              activate();
+                              v.play().catch((e) =>
+                                console.error("Fallback play failed:", e),
+                              );
+                            });
+                        } else if (v.webkitEnterFullscreen) {
+                          console.log("Attempting webkitEnterFullscreen");
+                          v.webkitEnterFullscreen();
+                          activate();
+                        } else if (v.webkitRequestFullscreen) {
+                          console.log("Attempting webkitRequestFullscreen");
+                          v.webkitRequestFullscreen();
+                          activate();
+                        } else {
+                          console.warn("No fullscreen API available");
+                          // Fallback for no API support
+                          activate();
+                        }
+
                         v.addEventListener("fullscreenchange", exitHandler);
                         v.addEventListener("webkitendfullscreen", exitHandler);
                       }
