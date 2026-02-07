@@ -44,7 +44,7 @@
         height: 100%;
         object-fit: cover;
         z-index: 0;
-        opacity: 0.8; /* Slight overlay for text readability */
+        opacity: 1; /* Overlay removed as requested */
       }
       .service-text {
         position: absolute;
@@ -71,17 +71,18 @@
         font-size: 3.2vw !important; /* Scalable Desktop */
         font-weight: 800;
         text-transform: none !important;
-        color: #fff;
+        color: #ffffff;
         line-height: 1.1 !important;
         margin: 0;
         margin-bottom: 2vh !important;
         text-align: left;
         width: 50%;
+        transition: color 0.3s ease;
       }
       .service-description {
         font-family: "Sohne", sans-serif !important;
         font-size: 1.4vw !important; /* Scalable Desktop */
-        color: #fff;
+        color: #ffffff;
         width: 40%;
         max-width: 40vw !important;
         line-height: 1.5 !important;
@@ -89,6 +90,7 @@
         margin: 0;
         margin-bottom: 0 !important;
         text-align: right;
+        transition: color 0.3s ease;
       }
 
       /* Marquee Animation Styles */
@@ -142,7 +144,7 @@
         z-index: 20;
         opacity: 1 !important;
         visibility: visible !important;
-        transition: none !important;
+        transition: all 0.3s ease !important;
         animation: none !important;
       }
       .progress-segment {
@@ -154,19 +156,21 @@
         position: relative;
         opacity: 1 !important;
         visibility: visible !important;
-        transition: none !important;
+        transition: all 0.3s ease !important;
         animation: none !important;
       }
       .progress-fill {
         height: 100%;
-        background-color: #39ff14 !important; /* Neon Green - Protected */
+        background-color: #ffffff !important; /* White */
         width: 0%; /* Start empty */
-        box-shadow: 0 0 10px #39ff14;
+        box-shadow: 0 0 10px #ffffff;
+        transition: all 0.3s ease;
       }
       /* Explicit protection for progress elements */
       .testimonial-border-wrapper {
-        background-color: #39ff14 !important;
-        border-color: #39ff14 !important;
+        background-color: #ffffff !important;
+        border-color: #ffffff !important;
+        transition: all 0.3s ease;
       }
       .progress-segment.completed .progress-fill {
         width: 100% !important;
@@ -4609,20 +4613,69 @@
                 </section>
 
                 <section id="servicos">
-                  <!-- Card 1: Audiovisual -->
+                  <!-- Card 1: Marketing Fokus -->
                   <div class="service-card" style="background-color: #f0f0f0">
                     <div class="service-content-wrapper">
                       <img
-                        src="assets/images/scroll-img-4.jpeg"
+                        src="assets/images/bg-servicos-3.jpg"
+                        alt="Marketing Fokus Mockup"
+                        class="service-image"
+                      />
+                      <div class="service-text">
+                        <div class="card-header-row">
+                          <h2 class="service-title">Marketing Fokus</h2>
+                          <p class="service-description">
+                            Contamos com um time de marketing completo para
+                            atender sua empresa. Desde o planejamento, até a
+                            execução de Landing Pages, Tráfego Pago, Automações,
+                            Social Media e muito mais.
+                          </p>
+                        </div>
+                        <div class="marquee-container">
+                          <div class="marquee-wrapper">
+                            <span class="neon-subtitle"
+                              >WEBSITE • SOCIAL MEDIA • INSTAGRAM •
+                              POSICIONAMENTO • MARCA • WEBSITE • SOCIAL MEDIA •
+                              INSTAGRAM • POSICIONAMENTO • MARCA • WEBSITE •
+                              SOCIAL MEDIA • INSTAGRAM • POSICIONAMENTO • MARCA
+                              • WEBSITE • SOCIAL MEDIA • INSTAGRAM •
+                              POSICIONAMENTO • MARCA</span
+                            >
+                            <!-- DUPLICATE CONTENT FOR SEAMLESS LOOP -->
+                            <span class="neon-subtitle"
+                              >WEBSITE • SOCIAL MEDIA • INSTAGRAM •
+                              POSICIONAMENTO • MARCA • WEBSITE • SOCIAL MEDIA •
+                              INSTAGRAM • POSICIONAMENTO • MARCA • WEBSITE •
+                              SOCIAL MEDIA • INSTAGRAM • POSICIONAMENTO • MARCA
+                              • WEBSITE • SOCIAL MEDIA • INSTAGRAM •
+                              POSICIONAMENTO • MARCA</span
+                            >
+                          </div>
+                        </div>
+                        <!-- Scroll Progress Lines (Card 1 Active) -->
+                        <div class="card-progress">
+                          <div class="progress-segment active">
+                            <div class="progress-fill"></div>
+                          </div>
+                          <div class="progress-segment"></div>
+                          <div class="progress-segment"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Card 2: Audiovisual -->
+                  <div class="service-card" style="background-color: #0b0b0b">
+                    <div class="service-content-wrapper">
+                      <img
+                        src="assets/images/bg-servicos-1.jpg"
                         alt="Audiovisual Mockup"
                         class="service-image"
                       />
                       <div class="service-text">
                         <div class="card-header-row">
-                          <h2 class="service-title" style="color: #000">
-                            Audiovisual
-                          </h2>
-                          <p class="service-description" style="color: #333">
+                          <h2 class="service-title">Audiovisual</h2>
+                          <p class="service-description">
                             Produções audiovisuais de alto nível. Do roteiro à
                             pós-produção, criamos narrativas visuais que engajam
                             e emocionam seu público.
@@ -4647,29 +4700,25 @@
                             >
                           </div>
                         </div>
-                        <!-- Scroll Progress Lines (Card 1 Active) -->
+                        <!-- Scroll Progress Lines (Card 2 Active) -->
                         <div class="card-progress">
+                          <div class="progress-segment completed">
+                            <div class="progress-fill"></div>
+                          </div>
                           <div class="progress-segment active">
                             <div class="progress-fill"></div>
                           </div>
-                          <div class="progress-segment"></div>
                           <div class="progress-segment"></div>
                         </div>
                       </div>
                     </div>
                   </div>
 
-                  <!-- Card 2: Real Time -->
-                  <div
-                    class="service-card"
-                    style="
-                      background-color: #0b0b0b;
-                      border-top: 1px solid #39ff14;
-                    "
-                  >
+                  <!-- Card 3: Real Time -->
+                  <div class="service-card" style="background-color: #000">
                     <div class="service-content-wrapper">
                       <img
-                        src="assets/images/scroll-img-1.jpeg"
+                        src="assets/images/bg-servicos-2.jpg"
                         alt="Real Time Mockup"
                         class="service-image"
                       />
@@ -4698,61 +4747,6 @@
                               REAL TIME • MOBILE • STORIES • EVENTO • CÂMERA •
                               REAL TIME • MOBILE • STORIES • EVENTO •
                               CÂMERA</span
-                            >
-                          </div>
-                        </div>
-                        <!-- Scroll Progress Lines (Card 2 Active) -->
-                        <div class="card-progress">
-                          <div class="progress-segment completed">
-                            <div class="progress-fill"></div>
-                          </div>
-                          <div class="progress-segment active">
-                            <div class="progress-fill"></div>
-                          </div>
-                          <div class="progress-segment"></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- Card 3: Fokus Marketing -->
-                  <div class="service-card" style="background-color: #000">
-                    <div class="service-content-wrapper">
-                      <img
-                        src="assets/images/scroll-img-3.jpeg"
-                        alt="Fokus Marketing Mockup"
-                        class="service-image"
-                      />
-                      <div class="service-text">
-                        <div class="card-header-row">
-                          <h2 class="service-title" style="color: #fff">
-                            Fokus Marketing
-                          </h2>
-                          <p class="service-description">
-                            Contamos com um time de marketing completo para
-                            atender sua empresa. Desde o planejamento, até a
-                            execução de Landing Pages, Tráfego Pago, Automações,
-                            Social Media e muito mais.
-                          </p>
-                        </div>
-                        <div class="marquee-container">
-                          <div class="marquee-wrapper">
-                            <span class="neon-subtitle"
-                              >WEBSITE • SOCIAL MEDIA • INSTAGRAM •
-                              POSICIONAMENTO • MARCA • WEBSITE • SOCIAL MEDIA •
-                              INSTAGRAM • POSICIONAMENTO • MARCA • WEBSITE •
-                              SOCIAL MEDIA • INSTAGRAM • POSICIONAMENTO • MARCA
-                              • WEBSITE • SOCIAL MEDIA • INSTAGRAM •
-                              POSICIONAMENTO • MARCA</span
-                            >
-                            <!-- DUPLICATE CONTENT FOR SEAMLESS LOOP -->
-                            <span class="neon-subtitle"
-                              >WEBSITE • SOCIAL MEDIA • INSTAGRAM •
-                              POSICIONAMENTO • MARCA • WEBSITE • SOCIAL MEDIA •
-                              INSTAGRAM • POSICIONAMENTO • MARCA • WEBSITE •
-                              SOCIAL MEDIA • INSTAGRAM • POSICIONAMENTO • MARCA
-                              • WEBSITE • SOCIAL MEDIA • INSTAGRAM •
-                              POSICIONAMENTO • MARCA</span
                             >
                           </div>
                         </div>
@@ -8558,7 +8552,7 @@
             .forEach((wrapper, i) => {
               // Explicitly select only text and images to animate, ensuring progress bar is excluded
               const childrenToAnimate = wrapper.querySelectorAll(
-                "h2, p, .neon-subtitle, .service-image",
+                "h2, p, .neon-subtitle",
               );
 
               gsap.from(childrenToAnimate, {
