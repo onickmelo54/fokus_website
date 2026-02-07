@@ -10,6 +10,18 @@
         background-color: #000;
         z-index: 5;
       }
+      /* Audio Button Transition */
+      #audio-toggle-btn {
+        transition:
+          transform 0.2s ease,
+          opacity 0.2s ease;
+      }
+      #audio-toggle-btn:active {
+        transform: scale(0.95);
+      }
+      #audio-toggle-btn svg {
+        transition: opacity 0.3s ease;
+      }
       .service-card {
         width: 100%;
         height: 150vh; /* Extra scroll space for animation */
@@ -3782,29 +3794,13 @@
                       playsinline
                       loop
                       muted
+                      id="main-hero-video"
                     ></video
                     ><button
                       data-hk="0-0-0-0-0-0-0-0-0-2-1-0-0-0-0-0-1-0-2-0-0-1-0-2-0-0-0-0-0-0-0-2-0-3-0-0-1-0-0-1-0-2-0-0"
+                      id="audio-toggle-btn"
                       class="go3900384133"
-                    >
-                      <svg
-                        data-hk="0-0-0-0-0-0-0-0-0-2-1-0-0-0-0-0-1-0-2-0-0-1-0-2-0-0-0-0-0-0-0-2-0-3-0-0-1-0-0-1-0-2-0-1-0-0"
-                        width="32"
-                        height="32"
-                        viewBox="0 0 32 32"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                        class="go427910854"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          clip-rule="evenodd"
-                          d="M3.06066 0.93934C2.47487 0.353553 1.52513 0.353553 0.93934 0.93934C0.353553 1.52513 0.353553 2.47487 0.93934 3.06066L29.2236 31.3449C29.8094 31.9307 30.7591 31.9307 31.3449 31.3449C31.9307 30.7591 31.9307 29.8094 31.3449 29.2236L3.06066 0.93934ZM5.98567 13.1012C6.75579 13.104 7.49976 12.8266 8.07952 12.3222L17.5403 21.7829C17.2868 23.0207 16.474 24.0897 15.4378 24.7643C14.411 25.4299 13.1422 25.2943 12.3377 24.4582C10.9974 23.0612 9.55067 21.6605 8.07108 20.2582C7.48013 19.7069 6.70116 19.4018 5.893 19.4051H4.91649C3.89762 19.4051 3.03231 18.6304 3.01325 17.6745C2.99577 16.7271 2.99419 15.7866 3.01696 14.8313C3.03973 13.876 3.90556 13.1012 4.92337 13.1012H5.98567ZM19.7113 24.3496C19.5236 24.1433 19.4056 23.8857 19.3702 23.6128L20.5384 24.781C20.2214 24.7399 19.9279 24.5876 19.7113 24.3496ZM21.8659 17.6233L24.1551 19.9125C24.1791 19.8276 24.2023 19.7425 24.2244 19.657C24.5301 18.4663 24.6819 17.2414 24.6761 16.0121C24.6815 14.7815 24.5292 13.5553 24.2228 12.3634C23.9874 11.4542 23.6471 10.5754 23.2087 9.74472C22.4673 8.34774 21.7011 7.63071 21.6163 7.55393C21.3518 7.31123 21.0017 7.18357 20.643 7.19901C20.2844 7.21445 19.9465 7.37174 19.7038 7.63627C19.4611 7.90081 19.3335 8.25092 19.3489 8.60958C19.3644 8.96825 19.5216 9.30609 19.7862 9.54878C19.899 9.65469 21.969 11.6977 21.969 16.0121C21.9719 16.5514 21.9374 17.0898 21.8659 17.6233ZM26.3151 22.0725L28.3675 24.1248C28.8377 23.1496 29.2118 22.1302 29.484 21.0813C29.9095 19.4271 30.1209 17.7251 30.1131 16.0171C30.1206 14.3075 29.9092 12.604 29.484 10.9481C29.1591 9.69189 28.689 8.47773 28.0833 7.33018C27.0671 5.42006 26.0424 4.45785 25.9296 4.35617C25.7986 4.236 25.6452 4.14281 25.4782 4.08191C25.3112 4.02101 25.1339 3.99361 24.9563 4.00125C24.7787 4.0089 24.6044 4.05145 24.4432 4.12648C24.2821 4.2015 24.1373 4.30754 24.0171 4.43852C23.8969 4.5695 23.8037 4.72287 23.7428 4.88987C23.6819 5.05688 23.6545 5.23424 23.6622 5.41183C23.6776 5.77049 23.8349 6.10833 24.0994 6.35103C24.1296 6.37962 24.925 7.14537 25.7114 8.63608C26.2135 9.59556 26.6031 10.6099 26.8722 11.6588C27.2341 13.0831 27.4135 14.5476 27.406 16.0171C27.4137 17.4844 27.2343 18.9466 26.8722 20.3685C26.7232 20.9484 26.5371 21.5175 26.3151 22.0725ZM12.409 8.1664L17.8682 13.6256C17.7928 12.6151 17.682 11.7781 17.5687 11.0857C17.35 9.77928 16.5096 8.64655 15.4219 7.94648C14.4297 7.30889 13.2163 7.40726 12.409 8.1664Z"
-                          fill="white"
-                          style="fill: white; fill-opacity: 1"
-                        ></path>
-                      </svg>
-                    </button>
+                    ></button>
                   </div>
                 </section>
                 <section
@@ -8886,24 +8882,60 @@
     document.addEventListener("DOMContentLoaded", function () {
       var video = document.getElementById("hero-video-mobile");
       if (video) {
-        video.addEventListener("click", function () {
-          // Unmute when entering fullscreen/active mode
-          video.muted = false;
+        video.addEventListener("click", function (e) {
+          // Device Detection Logic
+          const viewportWidth = window.innerWidth;
+          const ua = navigator.userAgent;
 
-          // Enable controls
-          video.controls = true;
+          // Criteria 1: Viewport width < 768px (Excludes Tablets like iPad Mini at 768px)
+          const isMobileBreakpoint =
+            window.matchMedia("(max-width: 767px)").matches;
 
-          // Attempt fullscreen
-          if (video.requestFullscreen) {
-            video.requestFullscreen();
-          } else if (video.webkitEnterFullscreen) {
-            // iOS Safari
-            video.webkitEnterFullscreen();
-          } else if (video.mozRequestFullScreen) {
-            video.mozRequestFullScreen();
-          } else if (video.msRequestFullscreen) {
-            video.msRequestFullscreen();
+          // Criteria 2: User Agent indicators
+          const hasMobileUA =
+            /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+              ua,
+            );
+          const isTabletUA = /iPad|Tablet/i.test(ua);
+
+          // Debug Logs
+          console.group("Mobile Video Fullscreen Debug");
+          console.log("Viewport Width:", viewportWidth);
+          console.log("User Agent:", ua);
+          console.log("Is Mobile Breakpoint (<768px):", isMobileBreakpoint);
+          console.log("Has Mobile UA:", hasMobileUA);
+          console.log("Is Tablet UA:", isTabletUA);
+
+          // Final Decision: Must be Mobile Width AND Mobile UA AND NOT Tablet UA
+          const isSmartphone = isMobileBreakpoint && hasMobileUA && !isTabletUA;
+          console.log(
+            "Result:",
+            isSmartphone
+              ? "Smartphone detected. Activating fullscreen."
+              : "Desktop/Tablet detected. Standard behavior.",
+          );
+          console.groupEnd();
+
+          if (isSmartphone) {
+            // Unmute when entering fullscreen/active mode
+            video.muted = false;
+
+            // Enable controls
+            video.controls = true;
+
+            // Attempt fullscreen
+            if (video.requestFullscreen) {
+              video.requestFullscreen();
+            } else if (video.webkitEnterFullscreen) {
+              // iOS Safari
+              video.webkitEnterFullscreen();
+            } else if (video.mozRequestFullScreen) {
+              video.mozRequestFullScreen();
+            } else if (video.msRequestFullscreen) {
+              video.msRequestFullscreen();
+            }
           }
+          // Fallback: Standard desktop behavior (click does nothing or toggles play if controls enabled elsewhere)
         });
 
         // Handle exit fullscreen to revert to background behavior
