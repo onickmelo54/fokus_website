@@ -18394,7 +18394,7 @@ function AM(n, e, t, i) {
       tag: c,
       method: "POST",
       timeout: l.timeout || 0,
-      uri: "/assets/".concat(a, "/").concat(o),
+      uri: "assets/".concat(a, "/").concat(o),
       headers: l.contentType ? { "Content-Type": l.contentType } : {},
       query: m,
       body: i,
@@ -92070,7 +92070,7 @@ const h0e = () =>
 function m0e(n) {
   return (rv(), dn(() => {}), null);
 }
-const C0e = { src: "/assets/gif/swingin.gif", width: 128, height: 128 },
+const C0e = { src: "assets/gif/swingin.gif", width: 128, height: 128 },
   I0e = xt('<li><a rel="noreferrer">'),
   A0e = () => {
     const n = tI(),
